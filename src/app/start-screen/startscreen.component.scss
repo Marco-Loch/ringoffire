@@ -1,0 +1,61 @@
+@import './../../styles.scss';
+
+
+
+.start-card {
+    margin: auto;
+    width: 832px;
+    height: 932px;
+    background: url('/assets/img/startcard.png') center center no-repeat;
+    border: 10px solid #040101;
+    border-radius: 120px;
+    box-shadow: 5px 5px 64px 1px #000000;
+}
+
+.text {
+    color: #ffc13b;
+    margin-top: 15%;
+    @include flexCenter();
+    font-family: Bangers;
+    font-size: 160px;
+    -webkit-box-reflect: below -39px linear-gradient(transparent, #e74f0f);
+    filter: url(#fire);
+    text-shadow: 0 0 10px #ff8c3b,
+                 0 0 40px #ff8c3b,
+                 0 0 80px #ff8c3b,
+                 0 0 160px #ff8c3b,
+                 0 0 240px #ff8c3b;
+}
+
+svg {
+    width: 0;
+    height: 0;
+}
+
+.menu_button {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+    width: 189px;
+    height: 70px;
+    background: url('/assets/img/menu_button.png') center center/cover content-box;
+    &:hover {
+        scale: 1.1;
+        filter: brightness(1.2);
+    }
+}
+
+@media screen and (max-width: 800px){
+    .text {
+        margin-top: 20%;
+        font-size: 120px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .text {
+        margin-top: 30%;
+        font-size: 64px;
+    }
+}

@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.start-screen {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  background: url("assets/img/background.jpg") center center/cover
+    no-repeat;
+  @include flexCenter;
+}
+
+/* bangers-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Bangers";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/Bangers-Regular.ttf") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}

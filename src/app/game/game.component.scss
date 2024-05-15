@@ -1,0 +1,60 @@
+@import "./../../styles.scss";
+
+.field {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  background: url("/assets/img/game_background_2.jpg") center center/cover no-repeat;
+  @include flexCenter();
+}
+
+.card-stack {
+  position: relative;
+  margin-left: 120px;
+  margin-bottom: 180px;
+  img {
+    border-radius: 16px;
+    position: absolute;
+    width: 180px;
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+
+  &:hover .flip-card-inner:not(.flipped) .top-card {
+    transform: scale(1.1) translateY(-20px);
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s, transform 1.6s 0.8s; /* Flip and move */
+  transform-style: preserve-3d;
+}
+
+.flipped {
+  transform: rotateY(180deg) translateX(250px) translateY(-180px) rotate(10deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.top-card {
+  transition: transform 200ms ease-in-out;
+}
